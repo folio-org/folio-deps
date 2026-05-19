@@ -1,0 +1,106 @@
+name: update
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  collect:
+    outputs:
+      changed: ${{ steps.collect.outputs.changed }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # 6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654  # v5.2.0
+        with:
+          java-version: |
+            17
+            21
+          distribution: 'temurin'
+      - name: collect
+        id: collect
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config --global advice.detachedHead false
+          for RELEASE in R1-2026
+          do
+            mv $RELEASE x || true
+            git rm -q -r $RELEASE || true
+            mkdir $RELEASE
+            DESCRIPTOR=$( wget -nv -O - https://raw.githubusercontent.com/folio-org/platform-lsp/refs/heads/$RELEASE/platform-descriptor.json )
+            PLATFORMS=$( printf %s "$DESCRIPTOR" | jq -r '.applications.required[], .applications.optional[] | "https://raw.githubusercontent.com/folio-org/" + .name + "/refs/tags/v" + .version + "/application.lock.json"' )
+            MODULES=$( for PLATFORM in $PLATFORMS
+                       do
+                         wget -nv -O - "$PLATFORM" | jq -r '.modules[] | .name + " " + .version'
+                       done | sort
+                     )
+            printf %s "$MODULES" | while read MODULE VERSION
+            do
+              printf '%s\n' "$MODULE $VERSION"
+              if [ -e "x/$MODULE-$VERSION" ]; then
+                cp "x/$MODULE-$VERSION" $RELEASE/
+                continue
+              fi
+              case "$MODULE" in
+                mod-graphql)  # nodejs
+                  continue
+                  ;;
+                mod-reporting)  # go
+                  continue
+                  ;;
+                mod-agreements|mod-licenses|mod-oa|mod-remote-sync|mod-serials-management|mod-service-interaction)  # gradle + Java 17
+                  echo "Please manually add $MODULE-$VERSION (grandle hangs in CI)"
+                  exit 1
+                  
+                  #gh repo clone "folio-org/$MODULE" -- --branch "v$VERSION" --depth=1
+                  #cd "$MODULE/service"
+                  #export JAVA_HOME="$JAVA_HOME_17_X64"
+                  
+                  ### this hangs, known issue:
+                  ### https://github.com/cdsap/Talaiot/issues/389
+                  ### https://github.com/anomalyco/opencode/issues/25038
+                  ### https://github.com/gradle/gradle/issues/5836
+                  #./gradlew dependencies | tee "../../$RELEASE/$MODULE-$VERSION"
+                  
+                  #export JAVA_HOME="$JAVA_HOME_21_X64"
+                  #cd ../..
+                  #continue
+                  ;;
+                *)
+                  gh repo clone "folio-org/$MODULE" -- --branch "v$VERSION" --depth=1
+                  # the first run is polluted with download messages
+                  ( cd "$MODULE"; mvn dependency:tree > /dev/null )
+                  ( cd "$MODULE"; mvn dependency:tree | sed -n '/^\[INFO\] --- dependency:/,/^\[INFO\] -/ { s/^\[INFO\] //; /^-/d; p }' > "../$RELEASE/$MODULE-$VERSION" )
+                  ;;
+              esac
+            done
+            git add $RELEASE
+          done
+          set +e
+          git diff --cached --exit-code --name-status
+          echo "changed=$?" | tee -a $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        if: steps.collect.outputs.changed != 0
+        with:
+          retention-days: 1
+          path: |
+            R1-2025/
+            R1-2026/
+  upload:
+    needs: collect
+    if: needs.collect.outputs.changed != 0
+    runs-on: ubuntu-slim
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # 6.0.2
+      - run: git rm -q -r R1-2025/ R1-2026/ || true
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add R1-2025/ R1-2026/
+          git commit -m "Automated update"
+          git push
