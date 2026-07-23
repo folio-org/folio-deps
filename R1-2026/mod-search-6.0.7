@@ -1,4 +1,4 @@
-org.folio:mod-search:jar:6.0.5
+org.folio:mod-search:jar:6.0.7
 +- org.folio:folio-spring-base:jar:10.0.0:compile
 |  +- org.folio:folio-spring-common:jar:10.0.0:compile
 |  +- org.springframework.boot:spring-boot-properties-migrator:jar:4.0.6:runtime
@@ -101,12 +101,11 @@ org.folio:mod-search:jar:6.0.5
 |     +- io.netty:netty-common:jar:4.2.12.Final:compile
 |     +- io.netty:netty-buffer:jar:4.2.12.Final:compile
 |     +- io.netty:netty-transport:jar:4.2.12.Final:compile
-|     |  \- io.netty:netty-resolver:jar:4.2.12.Final:compile
 |     +- io.netty:netty-codec-base:jar:4.2.12.Final:compile
 |     +- io.netty:netty-codec-compression:jar:4.2.12.Final:compile
 |     \- io.netty:netty-handler:jar:4.2.12.Final:compile
 |        \- io.netty:netty-transport-native-unix-common:jar:4.2.12.Final:compile
-+- org.folio:folio-s3-client:jar:3.0.1:compile
++- org.folio:folio-s3-client:jar:3.0.2:compile
 |  +- io.minio:minio:jar:8.6.0:compile
 |  |  +- com.carrotsearch.thirdparty:simple-xml-safe:jar:2.7.1:compile
 |  |  +- com.squareup.okhttp3:okhttp:jar:5.1.0:compile
@@ -119,45 +118,46 @@ org.folio:mod-search:jar:6.0.5
 |  |  \- org.jetbrains.kotlin:kotlin-stdlib:jar:2.2.21:compile
 |  |     \- org.jetbrains:annotations:jar:13.0:compile
 |  +- org.apache.logging.log4j:log4j-core:jar:2.25.4:compile
-|  \- software.amazon.awssdk:s3-transfer-manager:jar:2.42.34:compile
-|     +- software.amazon.awssdk:s3:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:aws-xml-protocol:jar:2.42.34:compile
-|     |  |  \- software.amazon.awssdk:aws-query-protocol:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:profiles:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:crt-core:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:http-auth:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:identity-spi:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:http-auth-spi:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:http-auth-aws:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:checksums:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:checksums-spi:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:retries-spi:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:metrics-spi:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:endpoints-spi:jar:2.42.34:compile
-|     |  +- software.amazon.awssdk:apache-client:jar:2.42.34:runtime
-|     |  |  +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
-|     |  |  \- org.apache.httpcomponents:httpcore:jar:4.4.16:compile
-|     |  \- software.amazon.awssdk:netty-nio-client:jar:2.42.34:runtime
-|     |     +- io.netty:netty-codec-http2:jar:4.2.12.Final:runtime
-|     |     +- io.netty:netty-codec:jar:4.2.12.Final:runtime
-|     |     |  +- io.netty:netty-codec-protobuf:jar:4.2.12.Final:runtime
-|     |     |  \- io.netty:netty-codec-marshalling:jar:4.2.12.Final:runtime
-|     |     \- io.netty:netty-transport-classes-epoll:jar:4.2.12.Final:runtime
-|     +- software.amazon.awssdk:sdk-core:jar:2.42.34:compile
-|     |  \- software.amazon.awssdk:retries:jar:2.42.34:compile
-|     +- software.amazon.awssdk:utils:jar:2.42.34:compile
-|     +- software.amazon.awssdk:annotations:jar:2.42.34:compile
-|     +- software.amazon.awssdk:regions:jar:2.42.34:compile
-|     +- software.amazon.awssdk:arns:jar:2.42.34:compile
-|     +- software.amazon.awssdk:aws-core:jar:2.42.34:compile
-|     |  +- software.amazon.eventstream:eventstream:jar:1.0.1:compile
-|     |  \- software.amazon.awssdk:utils-lite:jar:2.42.34:compile
-|     +- software.amazon.awssdk:json-utils:jar:2.42.34:compile
-|     |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.42.34:compile
-|     +- software.amazon.awssdk:protocol-core:jar:2.42.34:compile
-|     +- software.amazon.awssdk:auth:jar:2.42.34:compile
-|     |  \- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.42.34:compile
-|     \- software.amazon.awssdk:http-client-spi:jar:2.42.34:compile
+|  +- software.amazon.awssdk:s3-transfer-manager:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:s3:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:aws-xml-protocol:jar:2.42.34:compile
+|  |  |  |  \- software.amazon.awssdk:aws-query-protocol:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:profiles:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:crt-core:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:http-auth:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:identity-spi:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:http-auth-spi:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:http-auth-aws:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:checksums:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:checksums-spi:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:retries-spi:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:endpoints-spi:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:apache-client:jar:2.42.34:runtime
+|  |  |     +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
+|  |  |     \- org.apache.httpcomponents:httpcore:jar:4.4.16:compile
+|  |  +- software.amazon.awssdk:sdk-core:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:retries:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:utils:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:annotations:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:regions:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:arns:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:aws-core:jar:2.42.34:compile
+|  |  |  +- software.amazon.eventstream:eventstream:jar:1.0.1:compile
+|  |  |  \- software.amazon.awssdk:utils-lite:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:json-utils:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:protocol-core:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:auth:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.42.34:compile
+|  |  \- software.amazon.awssdk:http-client-spi:jar:2.42.34:compile
+|  \- software.amazon.awssdk:netty-nio-client:jar:2.42.34:compile
+|     +- software.amazon.awssdk:metrics-spi:jar:2.42.34:compile
+|     +- io.netty:netty-codec-http2:jar:4.2.12.Final:compile
+|     +- io.netty:netty-codec:jar:4.2.12.Final:compile
+|     |  +- io.netty:netty-codec-protobuf:jar:4.2.12.Final:compile
+|     |  \- io.netty:netty-codec-marshalling:jar:4.2.12.Final:compile
+|     +- io.netty:netty-transport-classes-epoll:jar:4.2.12.Final:compile
+|     \- io.netty:netty-resolver:jar:4.2.12.Final:compile
 +- org.springframework.boot:spring-boot-starter-web:jar:4.0.6:compile
 |  +- org.springframework.boot:spring-boot-starter-jackson:jar:4.0.6:compile
 |  |  \- org.springframework.boot:spring-boot-jackson:jar:4.0.6:compile

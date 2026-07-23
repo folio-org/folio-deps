@@ -1,4 +1,4 @@
-org.folio:edge-fqm:jar:4.1.1
+org.folio:edge-fqm:jar:4.1.2
 +- org.folio:folio-spring-base:jar:10.0.0:compile
 |  +- org.folio:folio-spring-common:jar:10.0.0:compile
 |  +- org.springframework.boot:spring-boot-properties-migrator:jar:4.0.3:runtime
@@ -197,7 +197,7 @@ org.folio:edge-fqm:jar:4.1.1
 |  \- org.testcontainers:testcontainers:jar:1.21.3:test
 |     +- org.apache.commons:commons-compress:jar:1.24.0:test
 |     +- org.rnorth.duct-tape:duct-tape:jar:1.0.8:test
-|     |  \- org.jetbrains:annotations:jar:17.0.0:compile
+|     |  \- org.jetbrains:annotations:jar:17.0.0:test
 |     +- com.github.docker-java:docker-java-api:jar:3.4.2:test
 |     \- com.github.docker-java:docker-java-transport-zerodep:jar:3.4.2:test
 |        \- com.github.docker-java:docker-java-transport:jar:3.4.2:test
@@ -243,16 +243,17 @@ org.folio:edge-fqm:jar:4.1.1
 |  |  \- com.ethlo.time:itu:jar:1.10.3:test
 |  \- org.slf4j:slf4j-api:jar:2.0.17:compile
 +- com.squareup.okhttp3:mockwebserver:jar:4.12.0:test
-|  +- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
-|  |  \- com.squareup.okio:okio:jar:3.6.0:compile
-|  |     \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
-|  |        \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+|  +- com.squareup.okhttp3:okhttp:jar:4.12.0:test
+|  |  \- com.squareup.okio:okio:jar:3.6.0:test
+|  |     \- com.squareup.okio:okio-jvm:jar:3.6.0:test
+|  |        \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:test
 |  +- junit:junit:jar:4.13.2:test
-|  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:2.2.21:compile
-|     +- org.jetbrains.kotlin:kotlin-stdlib:jar:2.2.21:compile
-|     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:2.2.21:compile
-+- org.folio:edge-common:jar:4.9.0:test
-|  +- io.vertx:vertx-core:jar:4.5.13:test
+|  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:2.2.21:test
+|     +- org.jetbrains.kotlin:kotlin-stdlib:jar:2.2.21:test
+|     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:2.2.21:test
++- org.folio:edge-common:jar:5.1.1:test
+|  +- io.vertx:vertx-core:jar:5.0.10:test
+|  |  +- io.vertx:vertx-core-logging:jar:5.0.10:test
 |  |  +- io.netty:netty-common:jar:4.2.10.Final:compile
 |  |  +- io.netty:netty-buffer:jar:4.2.10.Final:compile
 |  |  +- io.netty:netty-transport:jar:4.2.10.Final:compile
@@ -264,56 +265,55 @@ org.folio:edge-fqm:jar:4.1.1
 |  |  +- io.netty:netty-resolver:jar:4.2.10.Final:compile
 |  |  \- io.netty:netty-resolver-dns:jar:4.2.10.Final:test
 |  |     \- io.netty:netty-codec-dns:jar:4.2.10.Final:test
-|  +- io.vertx:vertx-web:jar:4.5.13:test
-|  |  +- io.vertx:vertx-web-common:jar:4.5.13:test
-|  |  +- io.vertx:vertx-auth-common:jar:4.5.13:test
-|  |  \- io.vertx:vertx-bridge-common:jar:4.5.13:test
-|  +- io.vertx:vertx-web-client:jar:4.5.13:test
-|  |  \- io.vertx:vertx-uri-template:jar:4.5.13:test
-|  +- org.folio.okapi:okapi-common:jar:6.2.0:test
+|  +- io.vertx:vertx-web:jar:5.0.10:test
+|  |  +- io.vertx:vertx-web-common:jar:5.0.10:test
+|  |  +- io.vertx:vertx-auth-common:jar:5.0.10:test
+|  |  \- io.vertx:vertx-bridge-common:jar:5.0.10:test
+|  +- io.vertx:vertx-web-client:jar:5.0.10:test
+|  |  \- io.vertx:vertx-uri-template:jar:5.0.10:test
+|  +- org.folio.okapi:okapi-common:jar:7.0.3:test
 |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.20.2:test
 |  |  +- org.codehaus.woodstox:stax2-api:jar:4.2.2:compile
 |  |  \- com.fasterxml.woodstox:woodstox-core:jar:7.1.1:compile
 |  +- args4j:args4j:jar:2.37:test
-|  +- software.amazon.awssdk:ssm:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:aws-json-protocol:jar:2.30.31:compile
-|  |  |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:protocol-core:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:http-auth-aws:jar:2.30.31:compile
-|  |  |  +- software.amazon.awssdk:checksums-spi:jar:2.30.31:compile
-|  |  |  \- software.amazon.awssdk:checksums:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:sdk-core:jar:2.30.31:compile
-|  |  |  +- software.amazon.awssdk:profiles:jar:2.30.31:compile
-|  |  |  +- software.amazon.awssdk:retries:jar:2.30.31:compile
+|  +- software.amazon.awssdk:ssm:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:aws-json-protocol:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:protocol-core:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:http-auth-aws:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:checksums-spi:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:checksums:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:sdk-core:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:profiles:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:retries:jar:2.42.34:compile
 |  |  |  \- org.reactivestreams:reactive-streams:jar:1.0.4:compile
-|  |  +- software.amazon.awssdk:auth:jar:2.30.31:compile
-|  |  |  +- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.30.31:compile
+|  |  +- software.amazon.awssdk:auth:jar:2.42.34:compile
+|  |  |  +- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.42.34:compile
 |  |  |  \- software.amazon.eventstream:eventstream:jar:1.0.1:compile
-|  |  +- software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:http-auth:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:identity-spi:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:http-client-spi:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:regions:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:annotations:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:utils:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:aws-core:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:metrics-spi:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:json-utils:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:endpoints-spi:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:retries-spi:jar:2.30.31:compile
-|  |  +- software.amazon.awssdk:apache-client:jar:2.30.31:runtime
+|  |  +- software.amazon.awssdk:http-auth-spi:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:http-auth:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:identity-spi:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:http-client-spi:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:regions:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:annotations:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:utils:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:aws-core:jar:2.42.34:compile
+|  |  |  \- software.amazon.awssdk:utils-lite:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:metrics-spi:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:json-utils:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:endpoints-spi:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:retries-spi:jar:2.42.34:compile
+|  |  +- software.amazon.awssdk:apache-client:jar:2.42.34:runtime
 |  |  |  +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
 |  |  |  +- org.apache.httpcomponents:httpcore:jar:4.4.16:compile
 |  |  |  \- commons-codec:commons-codec:jar:1.19.0:compile
-|  |  \- software.amazon.awssdk:netty-nio-client:jar:2.30.31:runtime
+|  |  \- software.amazon.awssdk:netty-nio-client:jar:2.42.34:runtime
 |  |     +- io.netty:netty-codec:jar:4.2.10.Final:runtime
 |  |     |  +- io.netty:netty-codec-protobuf:jar:4.2.10.Final:runtime
 |  |     |  \- io.netty:netty-codec-marshalling:jar:4.2.10.Final:runtime
 |  |     \- io.netty:netty-transport-classes-epoll:jar:4.2.10.Final:runtime
-|  +- org.folio:folio-tls-utils:jar:2.1.1:compile
-|  |  \- io.github.openfeign:feign-okhttp:jar:13.5:compile
-|  |     \- io.github.openfeign:feign-core:jar:13.5:compile
-|  +- io.github.jopenlibs:vault-java-driver:jar:6.2.0:compile
+|  +- org.folio:folio-tls-utils:jar:4.0.1:compile
+|  +- io.github.jopenlibs:vault-java-driver:jar:6.2.1:compile
 |  +- org.apache.logging.log4j:log4j-api:jar:2.25.3:compile
 |  +- org.apache.logging.log4j:log4j-core:jar:2.25.3:compile
 |  \- org.apache.logging.log4j:log4j-slf4j-impl:jar:2.25.3:compile
