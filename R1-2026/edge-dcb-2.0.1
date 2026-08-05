@@ -1,21 +1,4 @@
-org.folio:edge-dematic:jar:3.0.0
-+- org.folio:edge-common-spring:jar:4.0.0:compile
-|  +- org.folio:folio-spring-system-user:jar:10.0.0:compile
-|  |  +- org.folio:util:jar:35.4.2:compile
-|  |  \- io.netty:netty-codec-http:jar:4.2.12.Final:compile
-|  |     +- io.netty:netty-codec-base:jar:4.2.12.Final:compile
-|  |     \- io.netty:netty-codec-compression:jar:4.2.12.Final:compile
-|  +- org.folio:edge-api-utils:jar:1.7.0:compile
-|  +- org.folio:folio-backend-common:jar:4.0.0:compile
-|  |  +- org.springframework.boot:spring-boot-starter-restclient:jar:4.0.5:compile
-|  |  |  \- org.springframework.boot:spring-boot-restclient:jar:4.0.5:compile
-|  |  |     \- org.springframework.boot:spring-boot-http-client:jar:4.0.5:compile
-|  |  +- org.apache.commons:commons-collections4:jar:4.5.0:compile
-|  |  \- org.semver4j:semver4j:jar:5.8.0:compile
-|  \- org.apache.httpcomponents.client5:httpclient5:jar:5.5.2:compile
-|     +- org.apache.httpcomponents.core5:httpcore5:jar:5.3.6:compile
-|     +- org.apache.httpcomponents.core5:httpcore5-h2:jar:5.3.6:compile
-|     \- org.slf4j:slf4j-api:jar:2.0.17:compile
+org.folio:edge-dcb:jar:2.0.1
 +- org.folio:folio-spring-base:jar:10.0.0:compile
 |  +- org.folio:folio-spring-common:jar:10.0.0:compile
 |  +- org.springframework.boot:spring-boot-properties-migrator:jar:4.0.5:runtime
@@ -25,15 +8,20 @@ org.folio:edge-dematic:jar:3.0.0
 |  |  +- org.springframework.boot:spring-boot-starter-jdbc:jar:4.0.5:compile
 |  |  |  \- com.zaxxer:HikariCP:jar:7.0.2:compile
 |  |  +- org.springframework.boot:spring-boot-jdbc:jar:4.0.5:compile
-|  |  |  \- org.springframework.boot:spring-boot-sql:jar:4.0.5:compile
+|  |  |  +- org.springframework.boot:spring-boot-sql:jar:4.0.5:compile
+|  |  |  \- org.springframework.boot:spring-boot-transaction:jar:4.0.5:compile
+|  |  |     \- org.springframework.boot:spring-boot-persistence:jar:4.0.5:compile
 |  |  \- org.springframework.boot:spring-boot-liquibase:jar:4.0.5:compile
 |  +- org.springframework.boot:spring-boot-starter-webmvc:jar:4.0.5:compile
 |  +- org.springframework.boot:spring-boot-starter-log4j2:jar:4.0.5:compile
 |  |  +- org.apache.logging.log4j:log4j-slf4j2-impl:jar:2.25.3:compile
 |  |  \- org.apache.logging.log4j:log4j-jul:jar:2.25.3:compile
 |  +- org.apache.commons:commons-lang3:jar:3.19.0:compile
+|  +- org.postgresql:postgresql:jar:42.7.10:runtime
+|  |  \- org.checkerframework:checker-qual:jar:3.52.0:compile
 |  +- org.liquibase:liquibase-core:jar:5.0.2:compile
 |  |  +- org.yaml:snakeyaml:jar:2.5:compile
+|  |  +- org.apache.commons:commons-collections4:jar:4.5.0:compile
 |  |  +- org.apache.commons:commons-text:jar:1.15.0:compile
 |  |  +- com.opencsv:opencsv:jar:5.12.0:compile
 |  |  +- javax.xml.bind:jaxb-api:jar:2.3.1:compile
@@ -68,6 +56,7 @@ org.folio:edge-dematic:jar:3.0.0
 |  |  +- com.github.jknack:handlebars:jar:4.3.1:compile
 |  |  +- com.github.jknack:handlebars-jackson2:jar:4.3.1:compile
 |  |  +- org.slf4j:slf4j-ext:jar:2.0.17:compile
+|  |  +- org.slf4j:slf4j-api:jar:2.0.17:compile
 |  |  +- org.apache.maven.resolver:maven-resolver-util:jar:1.9.18:compile
 |  |  |  \- org.apache.maven.resolver:maven-resolver-api:jar:1.9.18:compile
 |  |  +- commons-cli:commons-cli:jar:1.10.0:compile
@@ -100,76 +89,30 @@ org.folio:edge-dematic:jar:3.0.0
 |  +- io.swagger.core.v3:swagger-annotations:jar:2.2.46:compile
 |  +- org.openapitools:jackson-databind-nullable:jar:0.2.10:compile
 |  \- org.mozilla:rhino:jar:1.9.1:compile
++- org.folio:edge-common-spring:jar:4.0.1:compile
+|  +- org.folio:folio-spring-system-user:jar:10.0.0:compile
+|  |  +- org.folio:util:jar:35.4.2:compile
+|  |  \- io.netty:netty-codec-http:jar:4.2.12.Final:compile
+|  |     +- io.netty:netty-codec-base:jar:4.2.12.Final:compile
+|  |     \- io.netty:netty-codec-compression:jar:4.2.12.Final:compile
+|  +- org.folio:edge-api-utils:jar:1.7.0:compile
+|  |  \- tools.jackson.dataformat:jackson-dataformat-xml:jar:3.1.0:compile
+|  |     +- tools.jackson.core:jackson-core:jar:3.1.0:compile
+|  |     \- tools.jackson.core:jackson-databind:jar:3.1.0:compile
+|  +- org.folio:folio-backend-common:jar:4.0.0:compile
+|  |  +- org.springframework.boot:spring-boot-starter-restclient:jar:4.0.5:compile
+|  |  |  \- org.springframework.boot:spring-boot-restclient:jar:4.0.5:compile
+|  |  |     \- org.springframework.boot:spring-boot-http-client:jar:4.0.5:compile
+|  |  \- org.semver4j:semver4j:jar:5.8.0:compile
+|  \- org.apache.httpcomponents.client5:httpclient5:jar:5.5.2:compile
+|     +- org.apache.httpcomponents.core5:httpcore5:jar:5.3.6:compile
+|     \- org.apache.httpcomponents.core5:httpcore5-h2:jar:5.3.6:compile
 +- org.springframework:spring-jdbc:jar:7.0.6:compile
 |  +- org.springframework:spring-beans:jar:7.0.6:compile
 |  +- org.springframework:spring-core:jar:7.0.6:compile
 |  |  +- commons-logging:commons-logging:jar:1.3.6:compile
 |  |  \- org.jspecify:jspecify:jar:1.0.0:compile
 |  \- org.springframework:spring-tx:jar:7.0.6:compile
-+- org.folio:edge-common:jar:5.1.0:compile
-|  +- io.vertx:vertx-core:jar:5.0.3:compile
-|  |  +- io.vertx:vertx-core-logging:jar:5.0.3:compile
-|  |  +- io.netty:netty-common:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-buffer:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-transport:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-handler:jar:4.2.12.Final:compile
-|  |  |  \- io.netty:netty-transport-native-unix-common:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-handler-proxy:jar:4.2.12.Final:compile
-|  |  |  \- io.netty:netty-codec-socks:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-codec-http2:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-resolver:jar:4.2.12.Final:compile
-|  |  +- io.netty:netty-resolver-dns:jar:4.2.12.Final:compile
-|  |  |  \- io.netty:netty-codec-dns:jar:4.2.12.Final:compile
-|  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.21.2:compile
-|  +- io.vertx:vertx-web:jar:5.0.3:compile
-|  |  +- io.vertx:vertx-web-common:jar:5.0.3:compile
-|  |  +- io.vertx:vertx-auth-common:jar:5.0.3:compile
-|  |  \- io.vertx:vertx-bridge-common:jar:5.0.3:compile
-|  +- io.vertx:vertx-web-client:jar:5.0.3:compile
-|  |  \- io.vertx:vertx-uri-template:jar:5.0.3:compile
-|  +- org.folio.okapi:okapi-common:jar:7.0.3:compile
-|  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.21:compile
-|  +- com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.21.2:compile
-|  +- args4j:args4j:jar:2.37:compile
-|  +- software.amazon.awssdk:ssm:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:aws-json-protocol:jar:2.32.29:compile
-|  |  |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:protocol-core:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:http-auth-aws:jar:2.32.29:compile
-|  |  |  +- software.amazon.awssdk:checksums-spi:jar:2.32.29:compile
-|  |  |  \- software.amazon.awssdk:checksums:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:sdk-core:jar:2.32.29:compile
-|  |  |  +- software.amazon.awssdk:profiles:jar:2.32.29:compile
-|  |  |  \- software.amazon.awssdk:retries:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:auth:jar:2.32.29:compile
-|  |  |  +- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.32.29:compile
-|  |  |  \- software.amazon.eventstream:eventstream:jar:1.0.1:compile
-|  |  +- software.amazon.awssdk:http-auth-spi:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:http-auth:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:identity-spi:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:http-client-spi:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:regions:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:annotations:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:utils:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:aws-core:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:metrics-spi:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:json-utils:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:endpoints-spi:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:retries-spi:jar:2.32.29:compile
-|  |  +- software.amazon.awssdk:apache-client:jar:2.32.29:runtime
-|  |  |  +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
-|  |  |  +- org.apache.httpcomponents:httpcore:jar:4.4.16:compile
-|  |  |  \- commons-codec:commons-codec:jar:1.19.0:compile
-|  |  \- software.amazon.awssdk:netty-nio-client:jar:2.32.29:runtime
-|  |     +- io.netty:netty-codec:jar:4.2.12.Final:runtime
-|  |     |  +- io.netty:netty-codec-protobuf:jar:4.2.12.Final:runtime
-|  |     |  \- io.netty:netty-codec-marshalling:jar:4.2.12.Final:runtime
-|  |     \- io.netty:netty-transport-classes-epoll:jar:4.2.12.Final:runtime
-|  +- org.folio:folio-tls-utils:jar:4.0.0:compile
-|  +- io.github.jopenlibs:vault-java-driver:jar:6.2.0:compile
-|  +- org.apache.logging.log4j:log4j-api:jar:2.25.3:compile
-|  +- org.apache.logging.log4j:log4j-core:jar:2.25.3:compile
-|  \- org.apache.logging.log4j:log4j-slf4j-impl:jar:2.25.3:compile
 +- org.springframework.boot:spring-boot-starter-web:jar:4.0.5:compile
 |  +- org.springframework.boot:spring-boot-starter-jackson:jar:4.0.5:compile
 |  |  \- org.springframework.boot:spring-boot-jackson:jar:4.0.5:compile
@@ -211,10 +154,6 @@ org.folio:edge-dematic:jar:3.0.0
 |     \- io.micrometer:micrometer-core:jar:1.16.4:compile
 |        +- org.hdrhistogram:HdrHistogram:jar:2.2.2:runtime
 |        \- org.latencyutils:LatencyUtils:jar:2.0.3:runtime
-+- org.springframework.boot:spring-boot-starter-integration:jar:4.0.5:compile
-|  \- org.springframework.boot:spring-boot-integration:jar:4.0.5:compile
-|     \- org.springframework.boot:spring-boot-transaction:jar:4.0.5:compile
-|        \- org.springframework.boot:spring-boot-persistence:jar:4.0.5:compile
 +- org.springframework.integration:spring-integration-core:jar:7.0.4:compile
 |  +- org.springframework:spring-aop:jar:7.0.6:compile
 |  +- org.springframework:spring-context:jar:7.0.6:compile
@@ -223,14 +162,7 @@ org.folio:edge-dematic:jar:3.0.0
 |  \- io.projectreactor:reactor-core:jar:3.8.4:compile
 |     \- org.reactivestreams:reactive-streams:jar:1.0.4:compile
 +- org.springframework.integration:spring-integration-ip:jar:7.0.4:compile
-+- tools.jackson.dataformat:jackson-dataformat-xml:jar:3.1.0:compile
-|  +- tools.jackson.core:jackson-core:jar:3.1.0:compile
-|  +- tools.jackson.core:jackson-databind:jar:3.1.0:compile
-|  +- org.codehaus.woodstox:stax2-api:jar:4.2.2:compile
-|  \- com.fasterxml.woodstox:woodstox-core:jar:7.1.1:compile
 +- org.projectlombok:lombok:jar:1.18.44:compile (optional)
-+- org.postgresql:postgresql:jar:42.7.10:compile
-|  \- org.checkerframework:checker-qual:jar:3.52.0:compile
 +- org.mapstruct:mapstruct:jar:1.6.3:compile
 +- org.springframework.boot:spring-boot-starter-test:jar:4.0.5:test
 |  +- org.springframework.boot:spring-boot-test:jar:4.0.5:test
@@ -268,4 +200,78 @@ org.folio:edge-dematic:jar:3.0.0
 |     \- org.hamcrest:hamcrest-library:jar:3.0:test
 |        \- org.hamcrest:hamcrest-core:jar:3.0:test
 +- org.wiremock:wiremock-standalone:jar:3.13.2:test
-\- org.awaitility:awaitility:jar:4.3.0:test
++- org.awaitility:awaitility:jar:4.3.0:test
++- org.testcontainers:testcontainers-junit-jupiter:jar:2.0.4:test
+|  \- org.testcontainers:testcontainers:jar:2.0.4:test
+|     +- org.apache.commons:commons-compress:jar:1.28.0:test
+|     |  \- commons-codec:commons-codec:jar:1.19.0:compile
+|     +- org.rnorth.duct-tape:duct-tape:jar:1.0.8:test
+|     |  \- org.jetbrains:annotations:jar:17.0.0:test
+|     +- com.github.docker-java:docker-java-api:jar:3.7.1:test
+|     \- com.github.docker-java:docker-java-transport-zerodep:jar:3.7.1:test
+|        \- com.github.docker-java:docker-java-transport:jar:3.7.1:test
+\- org.folio:edge-common:jar:5.1.0:test
+   +- io.vertx:vertx-core:jar:5.0.3:test
+   |  +- io.vertx:vertx-core-logging:jar:5.0.3:test
+   |  +- io.netty:netty-common:jar:4.2.12.Final:compile
+   |  +- io.netty:netty-buffer:jar:4.2.12.Final:compile
+   |  +- io.netty:netty-transport:jar:4.2.12.Final:compile
+   |  +- io.netty:netty-handler:jar:4.2.12.Final:compile
+   |  |  \- io.netty:netty-transport-native-unix-common:jar:4.2.12.Final:compile
+   |  +- io.netty:netty-handler-proxy:jar:4.2.12.Final:test
+   |  |  \- io.netty:netty-codec-socks:jar:4.2.12.Final:test
+   |  +- io.netty:netty-codec-http2:jar:4.2.12.Final:runtime
+   |  +- io.netty:netty-resolver:jar:4.2.12.Final:compile
+   |  +- io.netty:netty-resolver-dns:jar:4.2.12.Final:test
+   |  |  \- io.netty:netty-codec-dns:jar:4.2.12.Final:test
+   |  \- com.fasterxml.jackson.core:jackson-core:jar:2.21.2:compile
+   +- io.vertx:vertx-web:jar:5.0.3:test
+   |  +- io.vertx:vertx-web-common:jar:5.0.3:test
+   |  +- io.vertx:vertx-auth-common:jar:5.0.3:test
+   |  \- io.vertx:vertx-bridge-common:jar:5.0.3:test
+   +- io.vertx:vertx-web-client:jar:5.0.3:test
+   |  \- io.vertx:vertx-uri-template:jar:5.0.3:test
+   +- org.folio.okapi:okapi-common:jar:7.0.3:test
+   +- com.fasterxml.jackson.core:jackson-annotations:jar:2.21:compile
+   +- com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.21.2:test
+   |  +- org.codehaus.woodstox:stax2-api:jar:4.2.2:compile
+   |  \- com.fasterxml.woodstox:woodstox-core:jar:7.1.1:compile
+   +- args4j:args4j:jar:2.37:test
+   +- software.amazon.awssdk:ssm:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:aws-json-protocol:jar:2.32.29:compile
+   |  |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:protocol-core:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:http-auth-aws:jar:2.32.29:compile
+   |  |  +- software.amazon.awssdk:checksums-spi:jar:2.32.29:compile
+   |  |  \- software.amazon.awssdk:checksums:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:sdk-core:jar:2.32.29:compile
+   |  |  +- software.amazon.awssdk:profiles:jar:2.32.29:compile
+   |  |  \- software.amazon.awssdk:retries:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:auth:jar:2.32.29:compile
+   |  |  +- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.32.29:compile
+   |  |  \- software.amazon.eventstream:eventstream:jar:1.0.1:compile
+   |  +- software.amazon.awssdk:http-auth-spi:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:http-auth:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:identity-spi:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:http-client-spi:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:regions:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:annotations:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:utils:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:aws-core:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:metrics-spi:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:json-utils:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:endpoints-spi:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:retries-spi:jar:2.32.29:compile
+   |  +- software.amazon.awssdk:apache-client:jar:2.32.29:runtime
+   |  |  +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
+   |  |  \- org.apache.httpcomponents:httpcore:jar:4.4.16:compile
+   |  \- software.amazon.awssdk:netty-nio-client:jar:2.32.29:runtime
+   |     +- io.netty:netty-codec:jar:4.2.12.Final:runtime
+   |     |  +- io.netty:netty-codec-protobuf:jar:4.2.12.Final:runtime
+   |     |  \- io.netty:netty-codec-marshalling:jar:4.2.12.Final:runtime
+   |     \- io.netty:netty-transport-classes-epoll:jar:4.2.12.Final:runtime
+   +- org.folio:folio-tls-utils:jar:4.0.0:compile
+   +- io.github.jopenlibs:vault-java-driver:jar:6.2.0:compile
+   +- org.apache.logging.log4j:log4j-api:jar:2.25.3:compile
+   +- org.apache.logging.log4j:log4j-core:jar:2.25.3:compile
+   \- org.apache.logging.log4j:log4j-slf4j-impl:jar:2.25.3:compile
