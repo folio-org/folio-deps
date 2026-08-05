@@ -22,7 +22,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config --global advice.detachedHead false
-          for RELEASE in R1-2026
+          for RELEASE in R1-2026 R1-2025-ci
           do
             mv $RELEASE x || true
             git rm -q -r $RELEASE || true
