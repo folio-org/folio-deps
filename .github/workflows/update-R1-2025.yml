@@ -33,9 +33,9 @@ jobs:
             APPLICATIONS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.applications.required.[], .applications.optional.[] | .name + " " + .version' )
             printf %s "applications=$APPLICATIONS"
             MODULES=$(printf %s "$APPLICATIONS" | \
-                      while read MODULE VERSION
+                      while read NAME VERSION
                       do
-                        printf %s "$NAME-$VERSION\n"
+                        printf %s "name-version=$NAME-$VERSION\n"
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
