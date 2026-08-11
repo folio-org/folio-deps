@@ -38,7 +38,7 @@ jobs:
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
-            printf "%s%s" "$MODULES" "$EUREKA_COMPONENTS"
+            printf "modules+eureka_components=%s%s\n---" "$MODULES" "$EUREKA_COMPONENTS"
             printf "%s%s" "$MODULES" "$EUREKA_COMPONENTS" | \
             while read MODULE VERSION
             do
