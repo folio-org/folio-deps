@@ -35,13 +35,12 @@ jobs:
             MODULES=$(printf %s "$APPLICATIONS" \
                       | while read NAME VERSION
                       do
-                        echo "name-version=$NAME-$VERSION"
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application.lock.json" \
                                       "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" \
                         | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
-            echo "modules+eureka_components=$MODULES\n$EUREKA_COMPONENTS"
+            printf "modules+eureka_components=%s\n%s\n" "$MODULES" "$EUREKA_COMPONENTS"
             printf "%s\n%s\n" "$MODULES" "$EUREKA_COMPONENTS" | \
             while read MODULE VERSION
             do
