@@ -27,11 +27,11 @@ jobs:
             git rm -q -r $RELEASE || true
             mkdir $RELEASE
             PLATFORM_DESCRIPTOR=$( wget -nv -O - https://raw.githubusercontent.com/folio-org/platform-lsp/refs/heads/R1-2025-ci/platform-descriptor.json )
-            printf %s "platform_descriptor=$PLATFORM_DESCRIPTOR"
+            echo "platform_descriptor=$PLATFORM_DESCRIPTOR"
             EUREKA_COMPONENTS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.["eureka-components"].[] | .name + " " + .version ' | grep -v -F -e "folio-kong " -e "folio-keycloak " )
-            printf %s "eureka_components=$EUREKA_COMPONENTS"
+            echo "eureka_components=$EUREKA_COMPONENTS"
             APPLICATIONS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.applications.required.[], .applications.optional.[] | .name + " " + .version' )
-            printf %s "applications=$APPLICATIONS"
+            echo "applications=$APPLICATIONS"
             MODULES=$(printf %s "$APPLICATIONS" \
                       | while read NAME VERSION
                       do
@@ -41,8 +41,8 @@ jobs:
                         | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
-            printf "modules+eureka_components=%s%s\n---" "$MODULES" "$EUREKA_COMPONENTS"
-            printf "%s%s" "$MODULES" "$EUREKA_COMPONENTS" | \
+            echo "modules+eureka_components=$MODULES\n$EUREKA_COMPONENTS"
+            printf "%s\n%s\n" "$MODULES" "$EUREKA_COMPONENTS" | \
             while read MODULE VERSION
             do
               printf '%s\n' "$MODULE $VERSION"
