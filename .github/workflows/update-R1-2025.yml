@@ -35,7 +35,7 @@ jobs:
             MODULES=$(printf %s "$APPLICATIONS" \
                       | while read NAME VERSION
                       do
-                        printf %s "name-version=$NAME-$VERSION\n"
+                        echo "name-version=$NAME-$VERSION"
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application.lock.json" \
                                       "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" \
                         | jq -r '.modules[] | .name + " " + .version'
@@ -45,7 +45,7 @@ jobs:
             printf "%s\n%s\n" "$MODULES" "$EUREKA_COMPONENTS" | \
             while read MODULE VERSION
             do
-              printf '%s\n' "$MODULE $VERSION"
+              echo "module+version=$MODULE $VERSION"
               if [ -e "x/$MODULE-$VERSION" ]; then
                 cp "x/$MODULE-$VERSION" $RELEASE/
                 continue
