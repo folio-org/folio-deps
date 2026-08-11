@@ -26,14 +26,18 @@ jobs:
             mv $RELEASE x || true
             git rm -q -r $RELEASE || true
             mkdir $RELEASE
-            APPLICATIONS=$( wget -nv -O - https://raw.githubusercontent.com/folio-org/platform-lsp/refs/heads/$RELEASE/install-applications.json | jq -r '.[].id' )
+            PLATFORM_DESCRIPTOR=$( wget -nv -O - https://raw.githubusercontent.com/folio-org/platform-lsp/refs/heads/R1-2025-ci/platform-descriptor.json )
+            EUREKA_COMPONENTS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq '.["eureka-components"].[] | {(.name): .version }' | jq -s 'add | del(.["folio-kong", "folio-keycloak"])' )
+            APPLICATIONS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.applications.required.[], .applications.optional.[] | .name + " " + .version' )
             MODULES=$(for APPLICATION in $APPLICATIONS
                       do
-                        read NAME VERSION < <( printf %s "$APPLICATION" | sed -E 's/-([0-9])/ \1/' )
+                        printf %s "$APPLICATION" | read NAME VERSION
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
-            printf %s "$MODULES" | while read MODULE VERSION
+            printf "%s%s" "$MODULES" "$EUREKA_COMPONENTS"
+            printf "%s%s" "$MODULES" "$EUREKA_COMPONENTS" | \
+            while read MODULE VERSION
             do
               printf '%s\n' "$MODULE $VERSION"
               if [ -e "x/$MODULE-$VERSION" ]; then
