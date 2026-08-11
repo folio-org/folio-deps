@@ -1,4 +1,4 @@
-org.folio:mod-bulk-operations:jar:2.2.9
+org.folio:mod-bulk-operations:jar:2.2.10
 +- org.folio:folio-spring-base:jar:9.0.2:compile
 |  +- org.folio:folio-spring-common:jar:9.0.2:compile
 |  +- org.springframework.boot:spring-boot-properties-migrator:jar:3.4.13:runtime

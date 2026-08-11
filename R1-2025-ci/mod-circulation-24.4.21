@@ -1,4 +1,4 @@
-org.folio:mod-circulation:jar:24.4.20
+org.folio:mod-circulation:jar:24.4.21
 +- org.apache.logging.log4j:log4j-api:jar:2.24.3:compile
 +- org.apache.logging.log4j:log4j-core:jar:2.24.3:compile
 +- io.vertx:vertx-core:jar:4.5.13:compile

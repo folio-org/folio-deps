@@ -1,5 +1,5 @@
 [WARNING] The artifact com.github.tomakehurst:wiremock-jre8:jar:3.0.1 has been relocated to org.wiremock:wiremock:jar:3.0.1
-org.folio:mod-inventory:jar:21.1.20
+org.folio:mod-inventory:jar:21.1.22
 +- org.apache.kafka:kafka-clients:jar:3.9.0:compile
 |  +- com.github.luben:zstd-jni:jar:1.5.6-4:runtime
 |  +- org.lz4:lz4-java:jar:1.8.0:runtime
