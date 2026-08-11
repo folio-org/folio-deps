@@ -28,7 +28,7 @@ jobs:
             mkdir $RELEASE
             PLATFORM_DESCRIPTOR=$( wget -nv -O - https://raw.githubusercontent.com/folio-org/platform-lsp/refs/heads/R1-2025-ci/platform-descriptor.json )
             printf %s "platform_descriptor=$PLATFORM_DESCRIPTOR"
-            EUREKA_COMPONENTS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq '.["eureka-components"].[] | {(.name): .version }' | jq -s 'add | del(.["folio-kong", "folio-keycloak"])' )
+            EUREKA_COMPONENTS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.["eureka-components"].[] | .name + " " + .version ' | grep -v -F -e "folio-kong " -e "folio-keycloak " )
             printf %s "eureka_components=$EUREKA_COMPONENTS"
             APPLICATIONS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.applications.required.[], .applications.optional.[] | .name + " " + .version' )
             printf %s "applications=$APPLICATIONS"
