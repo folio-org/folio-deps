@@ -32,9 +32,10 @@ jobs:
             printf %s "eureka_components=$EUREKA_COMPONENTS"
             APPLICATIONS=$( printf %s "$PLATFORM_DESCRIPTOR" | jq -r '.applications.required.[], .applications.optional.[] | .name + " " + .version' )
             printf %s "applications=$APPLICATIONS"
-            MODULES=$(for APPLICATION in $APPLICATIONS
+            MODULES=$(printf %s "$APPLICATIONS" | \
+                      while read MODULE VERSION
                       do
-                        printf %s "$APPLICATION" | read NAME VERSION
+                        printf %s "$NAME-$VERSION\n"
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
