@@ -37,6 +37,7 @@ jobs:
                       do
                         printf %s "name-version=$NAME-$VERSION\n"
                         wget -nv -O - "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application.lock.json" \
+                                      "https://raw.githubusercontent.com/folio-org/$NAME/refs/tags/v$VERSION/application-descriptor.json" \
                         | jq -r '.modules[] | .name + " " + .version'
                       done | sort
                      )
