@@ -1,4 +1,4 @@
-org.olf:mod-erm-usage-harvester:pom:5.1.1
+org.olf:mod-erm-usage-harvester:pom:5.1.2
 +- org.apache.logging.log4j:log4j-slf4j2-impl:jar:2.24.3:compile
 |  +- org.apache.logging.log4j:log4j-api:jar:2.24.3:compile
 |  +- org.slf4j:slf4j-api:jar:2.0.7:compile (optional)
@@ -8,7 +8,7 @@ org.olf:mod-erm-usage-harvester:pom:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-spi:jar:5.1.1
+org.olf:mod-erm-usage-harvester-spi:jar:5.1.2
 +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 +- io.vertx:vertx-core:jar:4.5.22:compile
 |  +- io.netty:netty-common:jar:4.1.128.Final:compile
@@ -42,7 +42,7 @@ org.olf:mod-erm-usage-harvester-spi:jar:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-core:jar:5.1.1
+org.olf:mod-erm-usage-harvester-core:jar:5.1.2
 +- org.folio:domain-models-runtime:jar:35.4.1:compile
 |  +- javax.ws.rs:javax.ws.rs-api:jar:2.0.1:compile
 |  +- org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.46:compile
@@ -114,7 +114,7 @@ org.olf:mod-erm-usage-harvester-core:jar:5.1.1
 |  \- org.apache.logging.log4j:log4j-api:jar:2.24.3:compile
 +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 +- org.folio:mod-configuration-client:jar:5.10.0:compile
-+- org.olf:mod-erm-usage-harvester-spi:jar:5.1.1:compile
++- org.olf:mod-erm-usage-harvester-spi:jar:5.1.2:compile
 +- io.vertx:vertx-core:jar:4.5.22:compile
 |  +- io.netty:netty-common:jar:4.1.128.Final:compile
 |  +- io.netty:netty-buffer:jar:4.1.128.Final:compile
@@ -216,8 +216,8 @@ org.olf:mod-erm-usage-harvester-core:jar:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-nss:jar:5.1.1
-+- org.olf:mod-erm-usage-harvester-spi:jar:5.1.1:compile
+org.olf:mod-erm-usage-harvester-nss:jar:5.1.2
++- org.olf:mod-erm-usage-harvester-spi:jar:5.1.2:compile
 |  +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 |  +- io.vertx:vertx-core:jar:4.5.22:compile
 |  |  +- io.netty:netty-common:jar:4.1.128.Final:compile
@@ -240,7 +240,7 @@ org.olf:mod-erm-usage-harvester-nss:jar:5.1.1
 |     +- org.checkerframework:checker-qual:jar:3.43.0:compile
 |     +- com.google.errorprone:error_prone_annotations:jar:2.36.0:compile
 |     \- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
-+- org.olf:mod-erm-usage-counter41:jar:5.0.0:compile
++- org.olf:mod-erm-usage-counter41:jar:5.0.1:compile
 |  +- org.apache.cxf:cxf-core:jar:4.1.0:compile
 |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
 |  |  +- org.glassfish.jaxb:jaxb-runtime:jar:4.0.5:compile
@@ -303,8 +303,8 @@ org.olf:mod-erm-usage-harvester-nss:jar:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-cs41:jar:5.1.1
-+- org.olf:mod-erm-usage-harvester-spi:jar:5.1.1:compile
+org.olf:mod-erm-usage-harvester-cs41:jar:5.1.2
++- org.olf:mod-erm-usage-harvester-spi:jar:5.1.2:compile
 |  +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 |  +- io.vertx:vertx-core:jar:4.5.22:compile
 |  |  +- io.netty:netty-common:jar:4.1.128.Final:compile
@@ -328,7 +328,7 @@ org.olf:mod-erm-usage-harvester-cs41:jar:5.1.1
 |     +- org.checkerframework:checker-qual:jar:3.43.0:compile
 |     +- com.google.errorprone:error_prone_annotations:jar:2.36.0:compile
 |     \- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
-+- org.olf:mod-erm-usage-counter41:jar:5.0.0:compile
++- org.olf:mod-erm-usage-counter41:jar:5.0.1:compile
 |  +- org.apache.cxf:cxf-core:jar:4.1.0:compile
 |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
 |  |  +- org.glassfish.jaxb:jaxb-runtime:jar:4.0.5:compile
@@ -387,8 +387,8 @@ org.olf:mod-erm-usage-harvester-cs41:jar:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-cs50:jar:5.1.1
-+- org.olf:mod-erm-usage-harvester-spi:jar:5.1.1:compile
+org.olf:mod-erm-usage-harvester-cs50:jar:5.1.2
++- org.olf:mod-erm-usage-harvester-spi:jar:5.1.2:compile
 |  +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 |  +- io.vertx:vertx-core:jar:4.5.22:compile
 |  |  +- io.netty:netty-common:jar:4.1.128.Final:compile
@@ -411,7 +411,7 @@ org.olf:mod-erm-usage-harvester-cs50:jar:5.1.1
 |     +- org.checkerframework:checker-qual:jar:3.43.0:compile
 |     +- com.google.errorprone:error_prone_annotations:jar:2.36.0:compile
 |     \- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
-+- org.olf:mod-erm-usage-counter50:jar:5.0.0:compile
++- org.olf:mod-erm-usage-counter50:jar:5.0.1:compile
 |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
 |  +- commons-io:commons-io:jar:2.18.0:compile
 |  +- io.vertx:vertx-rx-java:jar:4.5.22:compile
@@ -447,8 +447,8 @@ org.olf:mod-erm-usage-harvester-cs50:jar:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-cs51:jar:5.1.1
-+- org.olf:mod-erm-usage-harvester-spi:jar:5.1.1:compile
+org.olf:mod-erm-usage-harvester-cs51:jar:5.1.2
++- org.olf:mod-erm-usage-harvester-spi:jar:5.1.2:compile
 |  +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 |  +- io.vertx:vertx-core:jar:4.5.22:compile
 |  |  +- io.netty:netty-common:jar:4.1.128.Final:compile
@@ -471,7 +471,7 @@ org.olf:mod-erm-usage-harvester-cs51:jar:5.1.1
 |     +- org.checkerframework:checker-qual:jar:3.43.0:compile
 |     +- com.google.errorprone:error_prone_annotations:jar:2.36.0:compile
 |     \- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
-+- org.olf:mod-erm-usage-counter51:jar:5.0.0:compile
++- org.olf:mod-erm-usage-counter51:jar:5.0.1:compile
 |  +- org.apache.commons:commons-csv:jar:1.13.0:compile
 |  |  +- commons-io:commons-io:jar:2.18.0:compile
 |  |  \- commons-codec:commons-codec:jar:1.17.2:compile
@@ -509,8 +509,8 @@ org.olf:mod-erm-usage-harvester-cs51:jar:5.1.1
 \- org.assertj:assertj-core:jar:3.27.3:test
    \- net.bytebuddy:byte-buddy:jar:1.15.11:test
 
-org.olf:mod-erm-usage-harvester-bundle:jar:5.1.1
-+- org.olf:mod-erm-usage-harvester-core:jar:5.1.1:compile
+org.olf:mod-erm-usage-harvester-bundle:jar:5.1.2
++- org.olf:mod-erm-usage-harvester-core:jar:5.1.2:compile
 |  +- org.folio:domain-models-runtime:jar:35.4.1:compile
 |  |  +- javax.ws.rs:javax.ws.rs-api:jar:2.0.1:compile
 |  |  +- org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.46:compile
@@ -575,7 +575,7 @@ org.olf:mod-erm-usage-harvester-bundle:jar:5.1.1
 |  |  \- org.freemarker:freemarker:jar:2.3.34:compile
 |  +- org.olf:mod-erm-usage-client:jar:5.1.0:compile
 |  +- org.folio:mod-configuration-client:jar:5.10.0:compile
-|  +- org.olf:mod-erm-usage-harvester-spi:jar:5.1.1:compile
+|  +- org.olf:mod-erm-usage-harvester-spi:jar:5.1.2:compile
 |  +- io.vertx:vertx-core:jar:4.5.22:compile
 |  |  +- io.netty:netty-common:jar:4.1.128.Final:compile
 |  |  +- io.netty:netty-buffer:jar:4.1.128.Final:compile
@@ -601,8 +601,8 @@ org.olf:mod-erm-usage-harvester-bundle:jar:5.1.1
 |  |  \- io.vertx:vertx-rx-gen:jar:4.5.22:compile
 |  |     \- io.vertx:vertx-codegen:jar:4.5.22:compile
 |  \- org.quartz-scheduler:quartz:jar:2.4.0:compile
-+- org.olf:mod-erm-usage-harvester-nss:jar:5.1.1:compile
-|  +- org.olf:mod-erm-usage-counter41:jar:5.0.0:compile
++- org.olf:mod-erm-usage-harvester-nss:jar:5.1.2:compile
+|  +- org.olf:mod-erm-usage-counter41:jar:5.0.1:compile
 |  |  +- org.apache.cxf:cxf-core:jar:4.1.0:compile
 |  |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
 |  |  |  +- org.glassfish.jaxb:jaxb-runtime:jar:4.0.5:compile
@@ -644,19 +644,19 @@ org.olf:mod-erm-usage-harvester-bundle:jar:5.1.1
 |  |     +- net.sf.supercsv:super-csv:jar:2.4.0:compile
 |  |     \- net.sf.dozer:dozer:jar:5.4.0:compile
 |  \- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
-+- org.olf:mod-erm-usage-harvester-cs41:jar:5.1.1:compile
++- org.olf:mod-erm-usage-harvester-cs41:jar:5.1.2:compile
 |  \- org.apache.cxf:cxf-rt-features-logging:jar:4.1.1:compile
 |     \- jakarta.xml.ws:jakarta.xml.ws-api:jar:4.0.2:compile
 |        \- jakarta.xml.soap:jakarta.xml.soap-api:jar:3.0.2:compile
-+- org.olf:mod-erm-usage-harvester-cs50:jar:5.1.1:compile
-|  \- org.olf:mod-erm-usage-counter50:jar:5.0.0:compile
++- org.olf:mod-erm-usage-harvester-cs50:jar:5.1.2:compile
+|  \- org.olf:mod-erm-usage-counter50:jar:5.0.1:compile
 |     +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
 |     +- io.vertx:vertx-rx-java:jar:4.5.22:compile
 |     |  \- io.vertx:vertx-rx-java-gen:jar:4.5.22:compile
 |     |     \- io.reactivex:rxjava:jar:1.3.8:compile
 |     \- io.swagger:swagger-annotations:jar:1.6.15:compile
-+- org.olf:mod-erm-usage-harvester-cs51:jar:5.1.1:compile
-|  \- org.olf:mod-erm-usage-counter51:jar:5.0.0:compile
++- org.olf:mod-erm-usage-harvester-cs51:jar:5.1.2:compile
+|  \- org.olf:mod-erm-usage-counter51:jar:5.0.1:compile
 |     +- org.apache.commons:commons-csv:jar:1.13.0:compile
 |     |  \- commons-codec:commons-codec:jar:1.17.2:compile
 |     +- jakarta.validation:jakarta.validation-api:jar:3.1.1:compile

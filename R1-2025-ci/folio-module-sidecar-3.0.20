@@ -1,4 +1,4 @@
-org.folio:folio-module-sidecar:jar:3.0.19
+org.folio:folio-module-sidecar:jar:3.0.20
 +- org.folio:folio-secret-store-common:jar:3.0.10:compile
 |  +- com.bettercloud:vault-java-driver:jar:5.1.0:compile
 |  +- software.amazon.awssdk:ssm:jar:2.30.36:compile
