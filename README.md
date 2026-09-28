@@ -21,4 +21,5 @@ When the [FOLIO Security Team](https://folio-org.atlassian.net/wiki/spaces/SEC/o
 vulnerable FOLIO modules for a given vulnerability of a maven library the team uses this repositories'
 GitHub code search.
 
-A manually triggered [GitHub Actions workflow](.github/workflows) updates the files.
+The [GitHub Actions workflow](.github/workflows) runs daily to update the files. It can also be
+triggered manually.
