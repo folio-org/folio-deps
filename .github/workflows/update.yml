@@ -1,5 +1,7 @@
 name: update
 on:
+  schedule:
+    - cron: 53 3 * * *
   workflow_dispatch:
 permissions: {}
 jobs:
