@@ -13,7 +13,7 @@ or in the next flower release.
 
 Only the latest released FOLIO module version for a flower release is listed.
 
-It uses `mvn dependency:tree` without `-Dverbose` option so that a dependency this is used
+It uses `mvn dependency:tree` without `-Dverbose` option so that a dependency that is used
 multiple times is listed only once. Only the dependency path that results from dependency mediation
 is listed: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html
 
