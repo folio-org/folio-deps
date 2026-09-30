@@ -1,4 +1,4 @@
-org.folio:folio-module-sidecar:jar:3.0.20
+org.folio:folio-module-sidecar:jar:3.0.21
 +- org.folio:folio-secret-store-common:jar:3.0.10:compile
 |  +- com.bettercloud:vault-java-driver:jar:5.1.0:compile
 |  +- software.amazon.awssdk:ssm:jar:2.30.36:compile
@@ -130,7 +130,7 @@ org.folio:folio-module-sidecar:jar:3.0.20
 |  |  +- org.crac:crac:jar:1.5.0:compile
 |  |  \- com.aayushatharva.brotli4j:brotli4j:jar:1.16.0:compile
 |  |     +- com.aayushatharva.brotli4j:service:jar:1.16.0:compile
-|  |     \- com.aayushatharva.brotli4j:native-linux-x86_64:jar:1.16.0:compile
+|  |     \- com.aayushatharva.brotli4j:native-linux-aarch64:jar:1.16.0:compile
 |  \- io.quarkus:quarkus-jsonp:jar:3.29.2:compile
 +- io.quarkus:quarkus-messaging-kafka:jar:3.29.2:compile
 |  +- io.quarkus:quarkus-kafka-client:jar:3.29.2:compile
