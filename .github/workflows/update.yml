@@ -71,8 +71,9 @@ jobs:
                 *)
                   gh repo clone "folio-org/$MODULE" -- --branch "v$VERSION" --depth=1
                   # the first run is polluted with download messages
-                  ( cd "$MODULE"; mvn dependency:tree > /dev/null )
-                  ( cd "$MODULE"; mvn dependency:tree | sed -n '/^\[INFO\] --- dependency:/,/^\[INFO\] -/ { s/^\[INFO\] //; /^-/d; p }' > "../$RELEASE/$MODULE-$VERSION" )
+                  ( cd "$MODULE"; mvn dependency:tree -Dverbose > /dev/null )
+                  ( cd "$MODULE"; mvn dependency:tree -Dverbose \
+                                  | sed -n '/^\[INFO\] --- dependency:/,/^\[INFO\] -/ { s/^\[INFO\] //; /^-/d; p }' > "../$RELEASE/$MODULE-$VERSION" )
                   ;;
               esac
             done
