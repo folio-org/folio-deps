@@ -13,9 +13,8 @@ or in the next flower release.
 
 Only the latest released FOLIO module version for a flower release is listed.
 
-It uses `mvn dependency:tree` without `-Dverbose` option so that a dependency that is used
-multiple times is listed only once. Only the dependency path that results from dependency mediation
-is listed: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html
+It uses `mvn dependency:tree` with `-Dverbose` option so that a software library is
+listed multiple times if multiple other software libraries depend on it.
 
 When the [FOLIO Security Team](https://folio-org.atlassian.net/wiki/spaces/SEC/overview) needs to find
 vulnerable FOLIO modules for a given vulnerability of a maven library the team uses this repositories'
