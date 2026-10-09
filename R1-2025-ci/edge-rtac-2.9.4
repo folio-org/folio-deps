@@ -1,0 +1,335 @@
+org.folio:edge-rtac:jar:2.9.4
++- io.vertx:vertx-core:jar:4.5.23:compile
+|  +- io.netty:netty-common:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  +- io.netty:netty-buffer:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  \- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-transport:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  \- (io.netty:netty-resolver:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-handler:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-resolver:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- io.netty:netty-transport-native-unix-common:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  \- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  \- io.netty:netty-codec:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |     +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |     +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |     \- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-handler-proxy:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-codec:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- io.netty:netty-codec-socks:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  \- (io.netty:netty-codec:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  \- (io.netty:netty-codec-http:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-codec-http:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-codec:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  \- (io.netty:netty-handler:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-codec-http2:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-codec:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-handler:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  \- (io.netty:netty-codec-http:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-resolver:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  \- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  +- io.netty:netty-resolver-dns:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-resolver:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- (io.netty:netty-codec:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  +- io.netty:netty-codec-dns:jar:4.1.130.Final:compile (version managed from 4.1.130.Final)
+|  |  |  +- (io.netty:netty-common:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  +- (io.netty:netty-buffer:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  +- (io.netty:netty-transport:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  |  \- (io.netty:netty-codec:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  |  \- (io.netty:netty-handler:jar:4.1.130.Final:compile - version managed from 4.1.130.Final; omitted for duplicate)
+|  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile (version managed from 2.16.1)
++- io.vertx:vertx-web:jar:4.5.23:compile
+|  +- io.vertx:vertx-web-common:jar:4.5.23:compile (version managed from 4.5.23)
+|  |  \- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  +- io.vertx:vertx-auth-common:jar:4.5.23:compile (version managed from 4.5.23)
+|  |  \- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  +- io.vertx:vertx-bridge-common:jar:4.5.23:compile (version managed from 4.5.23)
+|  |  \- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  \- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
++- io.jsonwebtoken:jjwt-api:jar:0.11.5:compile
++- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
++- com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.16.1:compile
+|  +- (com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile - version managed from 2.16.1; omitted for duplicate)
+|  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile - version managed from 2.16.1; omitted for duplicate)
+|  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile (version managed from 2.16.1)
+|  |  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile - version managed from 2.16.1; omitted for duplicate)
+|  |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile - version managed from 2.16.1; omitted for duplicate)
+|  +- org.codehaus.woodstox:stax2-api:jar:4.2.1:compile
+|  \- com.fasterxml.woodstox:woodstox-core:jar:6.5.1:compile
+|     \- (org.codehaus.woodstox:stax2-api:jar:4.2.1:compile - omitted for duplicate)
++- org.folio:edge-common:jar:4.9.0:compile
+|  +- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.13; omitted for duplicate)
+|  +- (io.vertx:vertx-web:jar:4.5.23:compile - version managed from 4.5.13; omitted for duplicate)
+|  +- io.vertx:vertx-web-client:jar:4.5.23:compile (version managed from 4.5.13)
+|  |  +- io.vertx:vertx-uri-template:jar:4.5.23:compile (version managed from 4.5.23)
+|  |  |  \- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  |  +- (io.vertx:vertx-web-common:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  |  +- (io.vertx:vertx-auth-common:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  |  \- (io.vertx:vertx-core:jar:4.5.23:compile - version managed from 4.5.23; omitted for duplicate)
+|  +- org.folio.okapi:okapi-common:jar:6.2.0:compile
+|  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile - version managed from 2.16.1; omitted for duplicate)
+|  +- (com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.16.1:compile - version managed from 2.16.1; omitted for duplicate)
+|  +- args4j:args4j:jar:2.37:compile
+|  +- (software.amazon.awssdk:ssm:jar:2.30.31:compile - omitted for duplicate)
+|  +- org.folio:folio-tls-utils:jar:2.1.1:compile
+|  |  +- (org.apache.commons:commons-lang3:jar:3.17.0:compile - omitted for duplicate)
+|  |  \- io.github.openfeign:feign-okhttp:jar:13.5:compile
+|  |     +- io.github.openfeign:feign-core:jar:13.5:compile
+|  |     \- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+|  |        +- com.squareup.okio:okio:jar:3.6.0:compile
+|  |        |  \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+|  |        |     +- (org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.10:compile - omitted for conflict with 1.8.21)
+|  |        |     \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+|  |        \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.8.21:compile
+|  |           +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.8.21:compile
+|  |           |  +- (org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.8.21:compile - omitted for conflict with 1.9.10)
+|  |           |  \- org.jetbrains:annotations:jar:13.0:compile
+|  |           \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.8.21:compile
+|  |              \- (org.jetbrains.kotlin:kotlin-stdlib:jar:1.8.21:compile - omitted for duplicate)
+|  +- io.github.jopenlibs:vault-java-driver:jar:6.2.0:compile
+|  +- (org.apache.logging.log4j:log4j-api:jar:2.17.1:compile - version managed from 2.24.3; omitted for duplicate)
+|  +- (org.apache.logging.log4j:log4j-core:jar:2.17.1:test - version managed from 2.24.3; scope managed from compile; omitted for duplicate)
+|  \- org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1:test (version managed from 2.24.3; scope managed from compile)
+|     +- org.slf4j:slf4j-api:jar:2.0.7:compile (version managed from 1.7.25)
+|     +- (org.apache.logging.log4j:log4j-api:jar:2.17.1:test - version managed from 2.17.1; omitted for duplicate)
+|     \- (org.apache.logging.log4j:log4j-core:jar:2.17.1:test - version managed from 2.17.1; scope managed from runtime; omitted for duplicate)
++- org.apache.commons:commons-lang3:jar:3.17.0:compile
++- org.apache.commons:commons-collections4:jar:4.4:compile
++- org.projectlombok:lombok:jar:1.18.36:provided
++- software.amazon.awssdk:ssm:jar:2.30.31:compile
+|  +- software.amazon.awssdk:aws-json-protocol:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:aws-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:protocol-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:sdk-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- software.amazon.awssdk:third-party-jackson-core:jar:2.30.31:compile
+|  |  \- (software.amazon.awssdk:json-utils:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:protocol-core:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:sdk-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:http-auth-aws:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:identity-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- software.amazon.awssdk:checksums-spi:jar:2.30.31:compile
+|  |  |  \- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- software.amazon.awssdk:checksums:jar:2.30.31:compile
+|  |     +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |     +- (software.amazon.awssdk:checksums-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |     \- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:sdk-core:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:metrics-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:endpoints-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-aws:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:checksums-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:checksums:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:identity-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- software.amazon.awssdk:profiles:jar:2.30.31:compile
+|  |  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  |  \- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:retries-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- software.amazon.awssdk:retries:jar:2.30.31:compile
+|  |  |  +- (software.amazon.awssdk:retries-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  |  \- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-api:jar:2.0.7:compile - version managed from 1.7.36; omitted for duplicate)
+|  |  \- org.reactivestreams:reactive-streams:jar:1.0.4:compile
+|  +- software.amazon.awssdk:auth:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:sdk-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:identity-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:regions:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:profiles:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:json-utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-aws:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- software.amazon.awssdk:http-auth-aws-eventstream:jar:2.30.31:compile
+|  |  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  |  \- (software.amazon.eventstream:eventstream:jar:1.0.1:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- software.amazon.eventstream:eventstream:jar:1.0.1:compile
+|  +- software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (org.reactivestreams:reactive-streams:jar:1.0.4:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:identity-spi:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:http-auth:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:identity-spi:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:identity-spi:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:http-client-spi:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:metrics-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (org.reactivestreams:reactive-streams:jar:1.0.4:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:regions:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:sdk-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:profiles:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:json-utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (org.slf4j:slf4j-api:jar:2.0.7:compile - version managed from 1.7.36; omitted for duplicate)
+|  +- software.amazon.awssdk:annotations:jar:2.30.31:compile
+|  +- software.amazon.awssdk:utils:jar:2.30.31:compile
+|  |  +- (org.reactivestreams:reactive-streams:jar:1.0.4:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (org.slf4j:slf4j-api:jar:2.0.7:compile - version managed from 1.7.36; omitted for duplicate)
+|  +- software.amazon.awssdk:aws-core:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:regions:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:auth:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:identity-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-auth:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:profiles:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:sdk-core:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:metrics-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:endpoints-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:retries-spi:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:retries:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.eventstream:eventstream:jar:1.0.1:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:metrics-spi:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:json-utils:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:third-party-jackson-core:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:endpoints-spi:jar:2.30.31:compile
+|  |  \- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:retries-spi:jar:2.30.31:compile
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:compile - omitted for duplicate)
+|  |  \- (software.amazon.awssdk:utils:jar:2.30.31:compile - omitted for duplicate)
+|  +- software.amazon.awssdk:apache-client:jar:2.30.31:runtime
+|  |  +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:runtime - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:metrics-spi:jar:2.30.31:runtime - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:utils:jar:2.30.31:runtime - omitted for duplicate)
+|  |  +- (software.amazon.awssdk:annotations:jar:2.30.31:runtime - omitted for duplicate)
+|  |  +- (org.apache.httpcomponents:httpclient:jar:4.5.13:runtime - omitted for duplicate)
+|  |  +- org.apache.httpcomponents:httpcore:jar:4.4.16:runtime
+|  |  \- commons-codec:commons-codec:jar:1.17.1:runtime
+|  \- software.amazon.awssdk:netty-nio-client:jar:2.30.31:runtime
+|     +- (software.amazon.awssdk:annotations:jar:2.30.31:runtime - omitted for duplicate)
+|     +- (software.amazon.awssdk:http-client-spi:jar:2.30.31:runtime - omitted for duplicate)
+|     +- (software.amazon.awssdk:utils:jar:2.30.31:runtime - omitted for duplicate)
+|     +- (software.amazon.awssdk:metrics-spi:jar:2.30.31:runtime - omitted for duplicate)
+|     +- (io.netty:netty-codec-http:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (io.netty:netty-codec-http2:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (io.netty:netty-codec:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (io.netty:netty-transport:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (io.netty:netty-common:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (io.netty:netty-buffer:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (io.netty:netty-handler:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- io.netty:netty-transport-classes-epoll:jar:4.1.130.Final:runtime (version managed from 4.1.118.Final)
+|     |  +- (io.netty:netty-common:jar:4.1.130.Final:runtime - version managed from 4.1.130.Final; omitted for duplicate)
+|     |  +- (io.netty:netty-buffer:jar:4.1.130.Final:runtime - version managed from 4.1.130.Final; omitted for duplicate)
+|     |  +- (io.netty:netty-transport:jar:4.1.130.Final:runtime - version managed from 4.1.130.Final; omitted for duplicate)
+|     |  \- (io.netty:netty-transport-native-unix-common:jar:4.1.130.Final:runtime - version managed from 4.1.130.Final; omitted for duplicate)
+|     +- (io.netty:netty-resolver:jar:4.1.130.Final:runtime - version managed from 4.1.118.Final; omitted for duplicate)
+|     +- (org.reactivestreams:reactive-streams:jar:1.0.4:runtime - omitted for duplicate)
+|     \- (org.slf4j:slf4j-api:jar:2.0.7:runtime - version managed from 1.7.36; omitted for duplicate)
++- com.bettercloud:vault-java-driver:jar:5.1.0:compile
++- org.apache.logging.log4j:log4j-api:jar:2.17.1:compile
++- org.apache.logging.log4j:log4j-core:jar:2.17.1:runtime
+|  \- (org.apache.logging.log4j:log4j-api:jar:2.17.1:runtime - version managed from 2.17.1; omitted for duplicate)
++- org.junit.jupiter:junit-jupiter-api:jar:5.10.0:test
+|  +- org.opentest4j:opentest4j:jar:1.3.0:test
+|  +- org.junit.platform:junit-platform-commons:jar:1.10.0:test (version managed from 1.10.0)
+|  |  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+|  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
++- org.junit.jupiter:junit-jupiter-engine:jar:5.10.0:test
+|  +- org.junit.platform:junit-platform-engine:jar:1.10.0:test (version managed from 1.10.0)
+|  |  +- (org.opentest4j:opentest4j:jar:1.3.0:test - omitted for duplicate)
+|  |  +- (org.junit.platform:junit-platform-commons:jar:1.10.0:test - version managed from 1.10.0; omitted for duplicate)
+|  |  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+|  +- (org.junit.jupiter:junit-jupiter-api:jar:5.10.0:test - version managed from 5.10.0; omitted for duplicate)
+|  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
++- org.junit.vintage:junit-vintage-engine:jar:5.10.0:test
+|  +- (org.junit.platform:junit-platform-engine:jar:1.10.0:test - version managed from 1.10.0; omitted for duplicate)
+|  +- junit:junit:jar:4.13.2:test
+|  |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+|  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
++- io.vertx:vertx-junit5:jar:4.5.23:test
+|  +- (io.vertx:vertx-core:jar:4.5.23:test - version managed from 4.5.23; omitted for duplicate)
+|  +- (org.junit.jupiter:junit-jupiter-api:jar:5.10.0:test - version managed from 5.8.2; omitted for duplicate)
+|  +- org.junit.jupiter:junit-jupiter-params:jar:5.10.0:test (version managed from 5.8.2)
+|  |  +- (org.junit.jupiter:junit-jupiter-api:jar:5.10.0:test - version managed from 5.10.0; omitted for duplicate)
+|  |  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+|  \- (org.junit.jupiter:junit-jupiter-engine:jar:5.10.0:test - version managed from 5.8.2; omitted for duplicate)
++- org.awaitility:awaitility:jar:4.3.0:test
+|  \- org.hamcrest:hamcrest:jar:2.1:test
++- nl.jqno.equalsverifier:equalsverifier:jar:3.19.1:test
+|  +- org.objenesis:objenesis:jar:3.4:test
+|  \- net.bytebuddy:byte-buddy:jar:1.17.1:test
++- io.vertx:vertx-unit:jar:4.5.23:test
+|  \- (io.vertx:vertx-core:jar:4.5.23:test - version managed from 4.5.23; omitted for duplicate)
++- org.mockito:mockito-core:jar:5.15.2:test
+|  +- (net.bytebuddy:byte-buddy:jar:1.15.11:test - omitted for conflict with 1.17.1)
+|  +- net.bytebuddy:byte-buddy-agent:jar:1.15.11:test
+|  \- (org.objenesis:objenesis:jar:3.3:test - omitted for conflict with 3.4)
+\- io.rest-assured:rest-assured:jar:5.5.1:test
+   +- org.apache.groovy:groovy:jar:4.0.22:test
+   +- org.apache.groovy:groovy-xml:jar:4.0.22:test
+   |  \- (org.apache.groovy:groovy:jar:4.0.22:test - omitted for duplicate)
+   +- org.apache.httpcomponents:httpclient:jar:4.5.13:runtime (scope not updated to runtime)
+   |  +- (org.apache.httpcomponents:httpcore:jar:4.4.13:runtime - omitted for conflict with 4.4.16)
+   |  +- commons-logging:commons-logging:jar:1.2:runtime
+   |  \- (commons-codec:commons-codec:jar:1.11:runtime - omitted for conflict with 1.17.1)
+   +- org.apache.httpcomponents:httpmime:jar:4.5.13:test
+   |  \- (org.apache.httpcomponents:httpclient:jar:4.5.13:test - omitted for duplicate)
+   +- (org.hamcrest:hamcrest:jar:2.2:test - omitted for conflict with 2.1)
+   +- org.ccil.cowan.tagsoup:tagsoup:jar:1.2.1:test
+   +- io.rest-assured:json-path:jar:5.5.1:test
+   |  +- org.apache.groovy:groovy-json:jar:4.0.22:test
+   |  |  \- (org.apache.groovy:groovy:jar:4.0.22:test - omitted for duplicate)
+   |  +- (org.apache.groovy:groovy:jar:4.0.22:test - omitted for duplicate)
+   |  \- io.rest-assured:rest-assured-common:jar:5.5.1:test
+   |     +- (org.apache.groovy:groovy:jar:4.0.22:test - omitted for duplicate)
+   |     \- (org.apache.commons:commons-lang3:jar:3.16.0:test - omitted for conflict with 3.17.0)
+   \- io.rest-assured:xml-path:jar:5.5.1:test
+      +- (org.apache.groovy:groovy-xml:jar:4.0.22:test - omitted for duplicate)
+      +- (org.apache.groovy:groovy:jar:4.0.22:test - omitted for duplicate)
+      +- (io.rest-assured:rest-assured-common:jar:5.5.1:test - omitted for duplicate)
+      +- (org.apache.commons:commons-lang3:jar:3.16.0:test - omitted for conflict with 3.17.0)
+      \- (org.ccil.cowan.tagsoup:tagsoup:jar:1.2.1:test - omitted for duplicate)
