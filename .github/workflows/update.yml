@@ -30,13 +30,16 @@ jobs:
             git rm -q -r $RELEASE || true
             mkdir $RELEASE
             DESCRIPTOR=$( wget -nv -O - https://raw.githubusercontent.com/folio-org/platform-lsp/refs/heads/$RELEASE/platform-descriptor.json )
+            EUREKA_COMPONENTS=$( printf %s "$DESCRIPTOR" | jq -r '.eureka-components[] | .name + " " + .version' )
+            printf %s "$EUREKA_COMPONENTS"
             PLATFORMS=$( printf %s "$DESCRIPTOR" | jq -r '.applications.required[], .applications.optional[] | "https://raw.githubusercontent.com/folio-org/" + .name + "/refs/tags/v" + .version + "/application.lock.json"' )
             MODULES=$( for PLATFORM in $PLATFORMS
                        do
                          wget -nv -O - "$PLATFORM" | jq -r '.modules[] | .name + " " + .version'
-                       done | sort
+                       done
                      )
-            printf %s "$MODULES" | while read MODULE VERSION
+            printf '%s%s' "$EUREKA_COMPONENTS" "$MODULES"                     
+            printf '%s%s' "$EUREKA_COMPONENTS" "$MODULES" | sort | while read MODULE VERSION
             do
               printf '%s\n' "$MODULE $VERSION"
               if [ -e "x/$MODULE-$VERSION" ]; then
@@ -44,6 +47,9 @@ jobs:
                 continue
               fi
               case "$MODULE" in
+                folio-keycloak|folio-kong)  # container
+                  continue
+                  ;;
                 mod-graphql)  # nodejs
                   continue
                   ;;
